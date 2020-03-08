@@ -2,6 +2,23 @@
 
 return [
 
+
+    //LARAVEL PASSPORT
+    'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        'api' => [
+            'driver' => 'passport',
+            'provider' => 'users',
+        ],
+    ],
+
+    //End of Passport
+
+
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -161,6 +178,11 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+
+        /*
+         * Package Laravel Passport...
+         */
+        Laravel\Passport\PassportServiceProvider::class,
 
         /*
          * Package Service Providers...

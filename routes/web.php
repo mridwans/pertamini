@@ -24,13 +24,12 @@ Route::group(['middleware'=>['auth','checkRole:admin,agen,sales']],function(){
 	Route::get('/dashboard','DashboardController@index');
 
 	Route::get('/transaksi','TransaksiController@index');
-	Route::get('/transaksi/transagen','TransaksiController@transagen');
 	Route::post('/transaksi/create','TransaksiController@create');
-	Route::get('/transaksi/transsales','TransaksiController@transsales');
-	Route::get('/transaksi/transkons','TransaksiController@transkons');
 	Route::get('/transaksi/{id}/list','TransaksiController@list');
 	Route::get('/transaksi/{id}/list2','TransaksiController@list2');
-
+	Route::get('/transaksi/transagen','TransaksiController@transagen');
+	Route::get('/transaksi/transsales','TransaksiController@transsales');
+	Route::get('/transaksi/transkons','TransaksiController@transkons');
 
 	Route::get('/konsumen','KonsumenController@index');
 	Route::get('/konsumen/{id}/edit','KonsumenController@edit');
